@@ -29,8 +29,6 @@ class Test_us05_tc05:
         sleep(2)
         createCustomerClick .click()
 
-
-
     def teardown_method(self):
         self.driver.quit()
 
