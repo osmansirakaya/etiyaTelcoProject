@@ -55,7 +55,7 @@ class Test_tcmb:
         
         WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"//*[@class='p-error block ng-invalid ng-dirty ng-star-inserted']")))
         errorText=self.driver.find_element(By.XPATH,"//*[@class='p-error block ng-invalid ng-dirty ng-star-inserted']")
-        errorText.text==contants_us05.error["contactMediumMessage"]
+        assert errorText.text==contants_us05.error["contactMediumMessage"]
         sleep(1)
 
     def teardown_method(self):

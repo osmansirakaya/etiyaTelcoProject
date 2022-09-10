@@ -51,8 +51,8 @@ class Test_tc05:
 
         sleep(2)
 
-        WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/app-add-address-info/div/app-main-layout/div/div/div/div[2]/div/form/div[2]/div/button")))
-        saveBtn=self.driver.find_element(By.XPATH,"/html/body/app-root/app-add-address-info/div/app-main-layout/div/div/div/div[2]/div/form/div[2]/div/button")
+        WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/app-add-address-info/div/app-main-layout/div/div/div/div[2]/div/form/div[2]/div[2]/button")))
+        saveBtn=self.driver.find_element(By.XPATH,"/html/body/app-root/app-add-address-info/div/app-main-layout/div/div/div/div[2]/div/form/div[2]/div[2]/button")
         
         sleep(2)
         
