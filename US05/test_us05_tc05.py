@@ -92,7 +92,7 @@ class Test_us05_tc05:
 
         WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/app-custom-toast/p-toast/div/p-toastitem/div/div/div/p")))
         streetName=self.driver.find_element(By.XPATH,"/html/body/app-root/app-custom-toast/p-toast/div/p-toastitem/div/div/div/p")
-        assert streetName.text == "This user already exist"
+        assert streetName.text == "A customer is already exist with this Nationality ID"
 
 
 

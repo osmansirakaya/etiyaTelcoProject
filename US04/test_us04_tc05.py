@@ -104,7 +104,7 @@ class Test_tc05:
         customerInfoText=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/app-main-layout/div/span[3]")
         assert customerInfoText.text==constants_us04.customer["info"]
 
-    @pytest.mark.parametrize("gsmNumber",[("5440942135")])
+    @pytest.mark.parametrize("gsmNumber",[("300303906")])
     def test_gsmNumber(self,gsmNumber):
         
         actions=ActionChains(self.driver)
@@ -176,9 +176,9 @@ class Test_tc05:
         
         WebDriverWait(self.driver,20).until(expected_conditions.visibility_of_element_located((By.XPATH,"//*[@etiyabutton='search']")))
         searchBtn=self.driver.find_element(By.XPATH,"//*[@etiyabutton='search']")
-
         searchBtn.click()
         sleep(3)
+        
         actions.send_keys(Keys.PAGE_UP).perform()
         sleep(2)
 
@@ -190,35 +190,33 @@ class Test_tc05:
         customerInfoText=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/app-main-layout/div/span[3]")
         assert customerInfoText.text==constants_us04.customer["info"]
 
-       
-    
-    @pytest.mark.parametrize("orderNumber",[("**************")])
-    def test_orderNumber(self,orderNumber):##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    # @pytest.mark.parametrize("orderNumber",[("**************")])
+    # def test_orderNumber(self,orderNumber):##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-        actions=ActionChains(self.driver)
-        actions.send_keys(Keys.PAGE_DOWN)
-        actions.perform()
+    #     actions=ActionChains(self.driver)
+    #     actions.send_keys(Keys.PAGE_DOWN)
+    #     actions.perform()
         
-        WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[1]/app-side-filter/div/div[2]/form/input[7]")))
-        orderNumberTextBox=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[1]/app-side-filter/div/div[2]/form/input[7]")
-        orderNumberTextBox.send_keys(orderNumber)
-        sleep(3)
+    #     WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[1]/app-side-filter/div/div[2]/form/input[7]")))
+    #     orderNumberTextBox=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[1]/app-side-filter/div/div[2]/form/input[7]")
+    #     orderNumberTextBox.send_keys(orderNumber)
+    #     sleep(3)
         
-        WebDriverWait(self.driver,20).until(expected_conditions.visibility_of_element_located((By.XPATH,"//*[@etiyabutton='search']")))
-        searchBtn=self.driver.find_element(By.XPATH,"//*[@etiyabutton='search']")
-        searchBtn.click()
-        sleep(3)
+    #     WebDriverWait(self.driver,20).until(expected_conditions.visibility_of_element_located((By.XPATH,"//*[@etiyabutton='search']")))
+    #     searchBtn=self.driver.find_element(By.XPATH,"//*[@etiyabutton='search']")
+    #     searchBtn.click()
+    #     sleep(3)
 
-        actions.send_keys(Keys.PAGE_UP).perform()
-        sleep(2)
+    #     actions.send_keys(Keys.PAGE_UP).perform()
+    #     sleep(2)
 
-        WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/th/a")))
-        customerIdBtn=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/th/a")
-        customerIdBtn.click()
+    #     WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/th/a")))
+    #     customerIdBtn=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/th/a")
+    #     customerIdBtn.click()
         
-        WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/app-main-layout/div/span[3]")))
-        customerInfoText=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/app-main-layout/div/span[3]")
-        assert customerInfoText.text==constants_us04.customer["info"]
+    #     WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/app-main-layout/div/span[3]")))
+    #     customerInfoText=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/app-main-layout/div/span[3]")
+    #     assert customerInfoText.text==constants_us04.customer["info"]
 
 
     def teardown_method(self):

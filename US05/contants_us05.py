@@ -1,13 +1,13 @@
 error={
-     "addressMessage": "Requirements field can not be left blank",
+     "addressMessage": "this field cannot be left blank",
 
      "contactMediumMessage": "Required field can not be left blank",
 
-     "demographicInfo": "Please fill in the required fields"
+     "demographicInfo": "This field cannot left blank!"
 
 }
 
 text={
-     "searchCustomer" : "SEARCH CUSTOMER"
-
+     "searchCustomer" : "SEARCH CUSTOMER",
+     "address": "Address Info" 
 }

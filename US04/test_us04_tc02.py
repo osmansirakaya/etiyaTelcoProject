@@ -92,7 +92,7 @@ class Test_tc02:
 
         assert accountNumberTextBox.text==""
 
-    @pytest.mark.parametrize("gsmNumber",[("5680780008")])
+    @pytest.mark.parametrize("gsmNumber",[("680780008")])
     def test_gsmNumber(self,gsmNumber):
         
         actions=ActionChains(self.driver)
@@ -129,6 +129,10 @@ class Test_tc02:
         firstNameTextBox=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[1]/app-side-filter/div/div[2]/form/input[5]")
         firstNameTextBox.send_keys(firstName)
         sleep(3)
+
+        actions=ActionChains(self.driver)
+        actions.send_keys(Keys.PAGE_DOWN)
+        actions.perform()
         
         WebDriverWait(self.driver,20).until(expected_conditions.visibility_of_element_located((By.XPATH,"//*[@etiyabutton='search']")))
         searchBtn=self.driver.find_element(By.XPATH,"//*[@etiyabutton='search']")
@@ -151,10 +155,15 @@ class Test_tc02:
         lastNameTextBox=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[1]/app-side-filter/div/div[2]/form/input[6]")
         lastNameTextBox.send_keys(lastName)
         sleep(3)
+
+        actions=ActionChains(self.driver)
+        actions.send_keys(Keys.PAGE_DOWN)
+        actions.perform()
         
         WebDriverWait(self.driver,20).until(expected_conditions.visibility_of_element_located((By.XPATH,"//*[@etiyabutton='search']")))
         searchBtn=self.driver.find_element(By.XPATH,"//*[@etiyabutton='search']")
         searchBtn.click()
+        sleep(3)
         
         WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[1]/app-side-filter/div/div[3]/button[1]")))
         clearBtn=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[1]/app-side-filter/div/div[3]/button[1]")

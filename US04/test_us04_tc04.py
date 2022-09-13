@@ -70,8 +70,8 @@ class Test_tc04:
         sleep(2)
      
         WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/th/a")))
-        cIdText=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/th/a")               
-        customerIdKontrol = cIdText.text
+        custIdText=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/th/a")               
+        customerIdKontrol = custIdText.text
 
         assert value==customerIdKontrol
       
@@ -104,8 +104,8 @@ class Test_tc04:
         sleep(2)
      
         WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/td[1]")))
-        nameText=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/td[1]")               
-        firstNamedKontrol = nameText.text
+        firstNameText=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/td[1]")               
+        firstNamedKontrol = firstNameText.text
 
         assert value==firstNamedKontrol
       
@@ -115,7 +115,9 @@ class Test_tc04:
     # girilen lastName ile arama yapılır ve listedeki lastName ile eşleme durumu kontrol edilir.
     @pytest.mark.parametrize("lastName",[("Creavan")])
     def test_lastName(self,lastName): 
-        
+
+        sleep(3)
+
         actions=ActionChains(self.driver)
         actions.send_keys(Keys.PAGE_DOWN)
         actions.perform()
@@ -139,9 +141,9 @@ class Test_tc04:
      
         WebDriverWait(self.driver,5).until(expected_conditions.visibility_of_element_located((By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/td[3]")))
         lastnameText=self.driver.find_element(By.XPATH,"/html/body/app-root/ng-component/div/div/div/div[2]/div/app-container/div/div/app-table-info/div/table/tbody/tr/td[3]")               
-        firstNamedKontrol = lastnameText.text
+        lastNameKontrol = lastnameText.text
 
-        assert value==firstNamedKontrol
+        assert value==lastNameKontrol
       
     def teardown_method(self):
         self.driver.quit()
